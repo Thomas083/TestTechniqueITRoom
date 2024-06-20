@@ -2,6 +2,7 @@
 
 namespace TestTechniqueITRoom.Models
 {
+	//TODO: Need to be rounded to 2 decimal places so we need to change the type of the properties to double for the properties interet, capital, mensualite and capitalRestant
 	public class TableauAmortissement
 	{
 		[Key]
