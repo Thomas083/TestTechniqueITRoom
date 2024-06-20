@@ -33,7 +33,8 @@ namespace TestTechniqueITRoom.Controllers
 			while (tableauAmortissement.capitalRestant > 0)
 			{
 				tableauAmortissement.echeance += 1;
-				tableauAmortissement.interet = Math.Round((tableauAmortissement.capitalRestant * tableauAmortissement.taux / 100) / 12, 2);
+				//TODO: Need to be rounded to 2 decimal places
+				tableauAmortissement.interet = (tableauAmortissement.capitalRestant * tableauAmortissement.taux / 100) / 12;
 				tableauAmortissement.capital = tableauAmortissement.mensualite - tableauAmortissement.interet;
 
 				if (tableauAmortissement.capitalRestant < tableauAmortissement.capital)
@@ -47,6 +48,7 @@ namespace TestTechniqueITRoom.Controllers
 				JsonObject amortissementObject = new JsonObject()
 				{
 					{ "echeance", tableauAmortissement.echeance },
+					//TODO: Need to be rounded to 2 decimal places
 					{ "capitalRestant", tableauAmortissement.capitalRestant },
 					{ "interet", tableauAmortissement.interet },
 					{ "capital", tableauAmortissement.capital }
